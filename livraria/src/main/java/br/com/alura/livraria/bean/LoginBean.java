@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.alura.livraria.dao.UsuarioDao;
@@ -15,8 +16,19 @@ import br.com.alura.livraria.modelo.Usuario;
 public class LoginBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	private Usuario usuario = new Usuario();
+	
+	//Usando o @Inject para dizer que a linha abaixo é uma dependencia dessa class, e que o CDI deve injeta-la
+	//@Inject
+	private UsuarioDao usuarioDao;
+	
+	//Fazendo a injeção de dependencias através do construtor da classe ou de um método inicializador, que recebemm todas as 
+	//dependencias da class
+	@Inject
+	public LoginBean(UsuarioDao usuarioDao) {
+		this.usuarioDao = usuarioDao;
+	}
+
 
 	public Usuario getUsuario() {
 		return usuario;
@@ -26,7 +38,7 @@ public class LoginBean implements Serializable {
 		System.out.println("fazendo login do usuario " + this.usuario.getEmail());
 		
 		FacesContext context = FacesContext.getCurrentInstance();
-		boolean existe = new UsuarioDao().existe(this.usuario);
+		boolean existe = usuarioDao.existe(this.usuario);
 		if(existe ) {
 			context.getExternalContext().getSessionMap().put("usuarioLogado", this.usuario);
 			return "livro?faces-redirect=true";
