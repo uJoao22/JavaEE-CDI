@@ -8,15 +8,15 @@ import javax.persistence.criteria.CriteriaQuery;
 public class DAO<T> {
 
 	private final Class<T> classe;
-	private EntityManager em;
-	
-	public DAO(Class<T> classe, EntityManager em) {
+
+	public DAO(Class<T> classe) {
 		this.classe = classe;
-		this.em = em;
 	}
 
 	public void adiciona(T t) {
-		
+
+		// consegue a entity manager
+		EntityManager em = new JPAUtil().getEntityManager();
 
 		// abre transacao
 		em.getTransaction().begin();
