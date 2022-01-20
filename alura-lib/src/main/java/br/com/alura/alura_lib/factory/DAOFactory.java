@@ -1,4 +1,4 @@
-package br.com.alura.livraria.util;
+package br.com.alura.alura_lib.factory;
 
 import java.lang.reflect.ParameterizedType;
 
@@ -7,7 +7,8 @@ import javax.enterprise.inject.spi.InjectionPoint;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-import br.com.alura.livraria.dao.DAO;
+import br.com.alura.alura_lib.dao.DAO;
+
 
 @SuppressWarnings("unchecked")
 public class DAOFactory {

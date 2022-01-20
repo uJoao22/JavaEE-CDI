@@ -1,4 +1,4 @@
-package br.com.alura.livraria.dao;
+package br.com.alura.alura_lib.dao;
 
 import java.io.Serializable;
 import java.util.List;

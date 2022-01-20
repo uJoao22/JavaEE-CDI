@@ -12,14 +12,13 @@ import javax.inject.Named;
 import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
 
-import br.com.alura.livraria.dao.DAO;
+import br.com.alura.alura_lib.dao.DAO;
 import br.com.alura.livraria.modelo.Livro;
 import br.com.alura.livraria.modelo.Venda;
 
 @Named
 @ViewScoped
 public class VendasBean implements Serializable{
-
 
 	private static final long serialVersionUID = 1L;
 	
