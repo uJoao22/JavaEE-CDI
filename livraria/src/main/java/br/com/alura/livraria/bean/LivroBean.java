@@ -8,6 +8,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.alura.livraria.dao.DAO;
@@ -29,6 +30,7 @@ public class LivroBean implements Serializable {
 	private DAO<Livro> livroDao;
 	private DAO<Autor> autorDao;
 	
+	@Inject
 	public LivroBean(DAO<Livro> livroDao, DAO<Autor> autorDao) {
 		this.livroDao = livroDao;
 		this.autorDao = autorDao;
