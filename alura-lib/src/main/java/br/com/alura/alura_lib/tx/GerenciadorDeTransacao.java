@@ -2,7 +2,6 @@ package br.com.alura.alura_lib.tx;
 
 import java.io.Serializable;
 
-import javax.annotation.Priority;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
@@ -16,7 +15,8 @@ import br.com.alura.alura_lib.tx.annotation.Transacional;
 //A anotação Transacional criada por mim, associa esse intercptador à anotação citada 
 @Transacional
 //Adicionando o Intercptor - MANEIRA 2, definindo o nivel de prioridade dele através de ENUM's
-@Priority(Interceptor.Priority.APPLICATION)
+//Deixando de uma forma que quem quiser habilitar terá que habilitar direto no beans.xml
+//@Priority(Interceptor.Priority.APPLICATION)
 public class GerenciadorDeTransacao implements Serializable{
 
 	private static final long serialVersionUID = -1392064408660679407L;

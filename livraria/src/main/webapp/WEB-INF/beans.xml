@@ -5,7 +5,7 @@
        version="1.2" bean-discovery-mode="all">
 
 	<!-- Adicionando o Interceptor - MANEIRA 1 -->
-<!--     <interceptors>
+    <interceptors>
     	<class>br.com.alura.alura_lib.tx.GerenciadorDeTransacao</class>
-    </interceptors> -->
+    </interceptors>
 </beans>
